@@ -18,9 +18,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
@@ -125,7 +127,10 @@ fun PasswordTextFieldComponent(labelValue: String , leadingIcon: @Composable (()
             focusedLabelColor = Primary,
             cursorColor = Primary
         ),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+        keyboardOptions = KeyboardOptions(
+            keyboardType = KeyboardType.Password,
+            imeAction = ImeAction.Next
+        ),
         value = passwoed.value,
         onValueChange = {
             passwoed.value = it
@@ -138,16 +143,20 @@ fun PasswordTextFieldComponent(labelValue: String , leadingIcon: @Composable (()
                 Icons.Filled.VisibilityOff
             )
                 var description = if (passwoedVisible.value){
-                    "Hide Passwoed"
+                    stringResource(R.string.hide_password)
                 }else{
-                    "Show password"
+                    stringResource(R.string.show_password)
                 }
             IconButton(onClick = { passwoedVisible.value = !passwoedVisible.value }) {
                 Icon(imageVector=iconImage, contentDescription = description)
             }
 
         },
-        visualTransformation = if (passwoedVisible.value) VisualTransformation.None else PasswordVisualTransformation()
+        visualTransformation = if (passwoedVisible.value)
+        { VisualTransformation.None }
+        else {
+            PasswordVisualTransformation()
+        }
 
     )
 }

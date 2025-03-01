@@ -23,6 +23,7 @@ import com.example.login_registration.R
 import com.example.login_registration.components.HeadingTextComponent
 import com.example.login_registration.components.MyTextFieldComponent
 import com.example.login_registration.components.NormalTextComponent
+import com.example.login_registration.components.PasswordTextFieldComponent
 
 @Composable
 fun SignUpScreen (){
@@ -61,7 +62,7 @@ fun SignUpScreen (){
                         contentDescription = ""
                     )
                 })
-            MyTextFieldComponent(labelValue = stringResource(id = R.string.password),
+            PasswordTextFieldComponent(labelValue = stringResource(id = R.string.password),
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Lock,
