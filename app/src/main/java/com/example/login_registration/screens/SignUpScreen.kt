@@ -1,3 +1,4 @@
+
 package com.example.login_registration.screens
 
 import androidx.compose.foundation.background
@@ -15,15 +16,13 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.login_registration.R
 import com.example.login_registration.components.HeadingTextComponent
-import com.example.login_registration.components.NormalTextComponent
 import com.example.login_registration.components.MyTextFieldComponent
+import com.example.login_registration.components.NormalTextComponent
 
 @Composable
 fun SignUpScreen (){
@@ -71,7 +70,7 @@ fun SignUpScreen (){
                 })
 
         }
-       }
+    }
 }
 
 
